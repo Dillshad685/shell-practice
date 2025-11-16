@@ -1,0 +1,7 @@
+#!/bin/bash
+
+person1=Dilma
+person2=Haneef
+
+echo "$person1:: Hello husband"
+echo "$person2:: Hello wife"
