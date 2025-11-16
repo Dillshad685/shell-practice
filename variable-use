@@ -3,5 +3,5 @@
 person1=Dilma
 person2=Haneef
 
-echo "$person1:: Hello husband"
-echo "$person2:: Hello wife"
+echo "$person2:: Hello husband"
+echo "$person1:: Hello wife"
