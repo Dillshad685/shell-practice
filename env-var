@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "My feeling is $course"
+echo "My feeling is $feeling"
