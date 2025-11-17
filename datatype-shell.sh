@@ -8,7 +8,7 @@ d=$(($a+$b+$c))
 
 echo "sum is : $d"
 
-family= ("Haneef", "Dilma")
+family=("Haneef", "Dilma")
 
 echo "family members: ${family [@]}
 
