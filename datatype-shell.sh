@@ -10,8 +10,8 @@ echo "sum is : $d"
 
 family=("Haneef" "Dilma")
 
-echo "family members: ${family [@]}"
+echo "family members: ${family[@]}"
 
-echo "famliy members: ${family [0]}"
+echo "famliy members: ${family[0]}"
 
-echo "family members: ${family [2]}"
+echo "family members: ${family[2]}"
