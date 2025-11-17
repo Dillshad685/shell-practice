@@ -8,4 +8,4 @@ echo "who is running the script : $USER"
 echo "Home directory of user: $HOME"
 echo "PID of script: $$"/
 sleep 50 &
-echo "PID of last command ran in background: $"
+echo "PID of last command ran in background: $!"
