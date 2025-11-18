@@ -12,6 +12,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1) #$0 refers to the file which is running 
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
+echo "$LOG_FILE"
 echo "script execution start time: $(date)" | tee -a $LOG_FILE
 
 USERID=$(id -u)
