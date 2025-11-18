@@ -48,5 +48,6 @@ do
 
     else
         echo "software is already present .. $Y SKIPPING $N"
+    fi    
 done
 
