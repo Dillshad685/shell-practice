@@ -6,7 +6,8 @@ Y="\e[33m"
 N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1) #$0 refers to the file which is running currently in
+#the server which is logs-software.sh removes .sh and adds .log
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
@@ -27,7 +28,7 @@ VALIDATE(){ #function receives input as args
      echo -e " Installation failed .. $R FAILURE $N" | tee -a $LOG_FILE
      exit 1
   else
-     echo -e "installation $2 .. $G SUCCESS $N" | tee -a $LOG_FILE
+     echo -e "installation $2 .. $G SUCCESS $N" 
   fi
 }
 
@@ -37,7 +38,7 @@ if [ $? -ne 0 ]; then
     dnf install mysql -y &>>$LOG_FILE
     VALIDATE $? "MYSQL"
 else 
-    echo -e "mysql already isntalled .. $Y SKIPPING $N" | tee -a $LOG_FILE
+    echo -e "mysql already isntalled .. $Y SKIPPING $N" | tee -a $LOG_FILE  # appends in the log file
 fi
 
 dnf list installed nginx &>>$LOG_FILE
