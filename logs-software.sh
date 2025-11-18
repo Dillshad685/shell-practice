@@ -6,6 +6,7 @@ Y="\e[33m"
 N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
+echo "$0"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1) #$0 refers to the file which is running currently in
 #the server which is logs-software.sh removes .sh and adds .log
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
