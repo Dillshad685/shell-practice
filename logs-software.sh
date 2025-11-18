@@ -5,6 +5,12 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+LOGS_FOLDER="/var/log/shell-script"
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+
+mkdir -p $LOGS_FOLDER
+
 USERID=$(id -u)
 
 #returns pwd user id if sudo it will be "0"
@@ -39,7 +45,7 @@ if [ $? -ne 0 ]; then
     dnf install nginx -y 
     VALIDATE $? "NGINX"
 else 
-    echo "nginx already isntalled .. $Y SKIPPING $N"
+    echo -e "nginx already isntalled .. $Y SKIPPING $N"
 fi
 
 
