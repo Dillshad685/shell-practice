@@ -39,15 +39,14 @@ VALIDATE(){ #function receives input as args
 for package in $@
 do
     #check if packages are already installed
-    dnf list installed packages &>>$LOG_FILE
+    dnf list installed $packages &>>$LOG_FILE
     
     #if exit code is 0 then return to else
     if [ $? -ne 0 ]; then
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? "$package"
-
     else
-        echo "software is already present .. $Y SKIPPING $N"
+        echo -e "software is already present .. $Y SKIPPING $N"
     fi    
 done
 
