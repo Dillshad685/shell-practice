@@ -27,17 +27,17 @@ VALIDATE(){ #function receives input as args
      echo -e " Installation failed .. $R FAILURE $N" | tee -a $LOG_FILE
      exit 1
   else
-     echo -e "installation $2 .. $G SUCCESS $N" 
+     echo -e "installation $2 .. $G SUCCESS $N" | tee -a $LOG_FILE
   fi
 }
 
-dnf list installed mysql &>>$LOG_FILE
+dnf list installed mysql &>>$LOG_FILE #this cmd runs in background and appends in log file
 #lists the files of mysql
 if [ $? -ne 0 ]; then
     dnf install mysql -y &>>$LOG_FILE
     VALIDATE $? "MYSQL"
 else 
-    echo "mysql already isntalled .. $Y SKIPPING $N" | tee -a $LOG_FILE
+    echo -e "mysql already isntalled .. $Y SKIPPING $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed nginx &>>$LOG_FILE
