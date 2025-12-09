@@ -33,7 +33,7 @@ USAGE(){
 
 #Check if arugments are correctly passed
 
-if [ $# -le 2]; then
+if [ $# -lt 2 ]; then
     USAGE
 fi
 
@@ -79,7 +79,7 @@ if [ ! -z $"{FILES}" ]; then # -z checks if string is empty
         exit 1
     fi
 else
-    echo "No files to archive $Y SKIPPING $N"
+    echo -e "files are not present $Y SKIPPING $N"
 fi
 
 
