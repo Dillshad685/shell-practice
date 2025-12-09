@@ -11,7 +11,8 @@ do
     USAGE=$(echo $line | awk '{print$6}' | cut -d "%" -f1)
     PARTITON=$(echo $line | awk '{print$7}')
     if [ $USAGE -ge $DISK_THRESHOLD ]; then
-        MESSAGE+="High disk utilization on $PARTITON : $USAGE % </br>"
+        #MESSAGE+="High disk utilization on $PARTITON : $USAGE % </br>"
+        echo "high usage on $PARTITION : $USAGE"
     fi
 done <<<$DISK_USAGE
 
