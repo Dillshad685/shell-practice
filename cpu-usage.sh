@@ -14,7 +14,7 @@ do
         #MESSAGE+="High disk utilization on $PARTITON : $USAGE % </br>"
         echo "high usage on $PARTITION : $USAGE"
     fi
-done <<<$DISK_USAGE
+done <<< $DISK_USAGE
 
 #echo -e "Message body: $MESSAGE"
 
