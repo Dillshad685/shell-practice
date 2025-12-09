@@ -81,6 +81,3 @@ if [ ! -z $"{FILES}" ]; then # -z checks if string is empty
 else
     echo -e "files are not present $Y SKIPPING $N"
 fi
-
-
-
