@@ -7,7 +7,7 @@ N="\e[34m"
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=$(3:- 14) #alue is not there will consider as 14
+DAYS=${3:-14}#alue is not there will consider as 14
 
 LOGS_FOLDER=/var/log/shell-script
 SCRIPT_NAME=$( echo $0 | cut -d "." f1 )
